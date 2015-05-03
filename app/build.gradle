@@ -2,8 +2,12 @@ apply plugin: 'com.android.application'
 
 android {
     signingConfigs {
+        debub {
+            keyAlias 'mkey'
+            keyPassword '12345'
+        }
     }
-    compileSdkVersion 21
+    compileSdkVersion 17
     buildToolsVersion "21.1.2"
     defaultConfig {
         applicationId "com.example.hmr.devtest"
@@ -23,7 +27,4 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.0.0'
-    compile 'com.android.support:support-v4:22.0.0'
 }

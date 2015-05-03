@@ -1,4 +1,4 @@
-package com.example.hmr.devtest;
+package com.example.hmr.devtest.sensor;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,6 +9,8 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.example.hmr.devtest.R;
 
 
 public class OrientationTest extends Activity implements SensorEventListener{

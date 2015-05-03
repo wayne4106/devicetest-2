@@ -1,4 +1,4 @@
-package com.example.hmr.devtest;
+package com.example.hmr.devtest.touch;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -42,6 +42,7 @@ public class DrawView extends View {
     @Override
     protected void onDraw(Canvas canvas){
         if(firstDraw){
+            //TODO: create test guides
            // for(int i = 0; i < 100; i+=20) {
              //   path.addRect(0, i, 20, 20, Path.Direction.CCW);
 

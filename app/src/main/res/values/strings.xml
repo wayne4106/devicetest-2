@@ -1,4 +1,5 @@
 <resources>
+    <string name="empty_list" />
     <string name="app_name">Device Test</string>
     <string name="action_settings">Settings</string>
     <string name="test_ls">Sensor Proximidade</string>
@@ -10,16 +11,22 @@
     <string name="test_info">Info</string>
     <string name="test_touch">Touch</string>
     <string name="test_orientation">Orientação</string>
-    <string name="empty_list" />
     <string name="test_cam_f">Front Cam</string>
     <string name="test_cam_b">Back Cam</string>
     <string name="test_led">Flash Led</string>
-    <string name="title_activity_sensor_test">SensorTest</string>
-    <string name="title_activity_display_info">Device Info</string>
 
     <string name="hello_world">Hello world!</string>
-    <string name="title_activity_touch_test">TouchTest</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="title_activity_orientation_test">OrientationTest</string>
+    <string name="title_activity_touch_test">Touch Panel Test</string>
+    <string name="title_activity_orientation_test">Orientation Test</string>
+    <string name="title_activity_keys_test">Keys Test</string>
+    <string name="title_activity_sensor_test">Proximity Sensor Test</string>
+    <string name="title_activity_display_info">Device Info</string>
+    <string name="title_activity_camera_test">Camera Test</string>
+    <string name="test_keys_vol_up">Volume up</string>
+    <string name="test_keys_vol_dn">Volume down</string>
+    <string name="test_keys_back">Back</string>
+    <string name="test_keys_menu">Menu</string>
+    <string name="test_keys_pwr">Power button</string>
+    <string name="takepicture">Take Picture</string>
+
 </resources>

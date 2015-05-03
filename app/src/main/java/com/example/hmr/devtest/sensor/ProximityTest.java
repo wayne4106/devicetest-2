@@ -1,4 +1,4 @@
-package com.example.hmr.devtest;
+package com.example.hmr.devtest.sensor;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -8,18 +8,19 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.hmr.devtest.R;
+
 
 /**
  * Created by hmr on 24-04-2015.
  */
-public class SensorTest extends Activity implements SensorEventListener{
+public class ProximityTest extends Activity implements SensorEventListener{
     private static final String PASS_MSG = "PASS";
     private static final int BACK_COLOR = Color.rgb(32,32,32);
     private static final int FRONT_COLOR = Color.GREEN;
     private SensorManager mSensorManager;
     private android.hardware.Sensor mSensor;
     private TextView tv;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,12 +45,12 @@ public class SensorTest extends Activity implements SensorEventListener{
     public void onSensorChanged(SensorEvent event) {
         if(event.values[0] == 0) {
             tv.setText(PASS_MSG);
-            tv.setTextColor(FRONT_COLOR);
-            tv.setBackgroundColor(BACK_COLOR);
-        }
-        else{
             tv.setTextColor(BACK_COLOR);
             tv.setBackgroundColor(FRONT_COLOR);
+        }
+        else{
+            tv.setTextColor(FRONT_COLOR);
+            tv.setBackgroundColor(BACK_COLOR);
         }
     }
 

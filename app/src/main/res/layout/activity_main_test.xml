@@ -31,7 +31,7 @@
         android:id="@+id/btn_btns"
         android:layout_row="0"
         android:layout_column="1"
-        />
+        android:onClick="testKeys"/>
 
 
     <Button
@@ -122,7 +122,7 @@
         android:id="@+id/btn_camera_f"
         android:layout_row="3"
         android:layout_column="0"
-        />
+        android:onClick="frontCameraTest"/>
 
     <Button
         android:layout_height="@dimen/button_heigh"
@@ -133,7 +133,7 @@
         android:id="@+id/btn_camera_b"
         android:layout_row="3"
         android:layout_column="1"
-        />
+        android:onClick="backCameraTest"/>
 
     <Button
         android:layout_height="@dimen/button_heigh"
