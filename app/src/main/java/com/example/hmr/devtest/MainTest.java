@@ -19,10 +19,9 @@ import com.example.hmr.devtest.touch.TouchTest;
 
 public class MainTest extends Activity {
     private static final String LOGTAG ="Device Test";
-    private static final int TEST_SOUND1 = R.raw.acdc_sample;
-    private static final int TEST_SOUND2 = R.raw.acdc_sample;
+    private static final int TEST_SPK_SOUND = R.raw.acdc_sample;
+    private static final int TEST_RECV_SOUND = R.raw.a1khz_44100hz_16bit;
     private static final long VIBRA_TIME = 2000;
-    private int testSound;
     private MediaPlayer mediaPlayer = null;
     private AudioManager audioManager;
     private CameraManager cameraManager;
@@ -34,6 +33,8 @@ public class MainTest extends Activity {
         setContentView(R.layout.activity_main_test);
         audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
         audioManager.setMode(AudioManager.STREAM_MUSIC);
+        //int origionalVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC), 0);
         vibra = (Vibrator)getSystemService(VIBRATOR_SERVICE);
         cameraManager = new CameraManager();
     }
@@ -54,18 +55,16 @@ public class MainTest extends Activity {
     }
 
     @Override
-    protected void onResume(){
-        super.onResume();
-    }
+    protected void onResume(){ super.onResume(); }
 
     @Override
     protected void onStart(){
         super.onStart();
+        audioManager.setMode(AudioManager.STREAM_MUSIC);
     }
-
-    //TODO: restore audio profile
-    public void playSound(View view) {
-        if(mediaPlayer == null) {
+    //TODO: FIX bug onCompletion() were it plays same sound even if changed by selection??
+    public void playSound(int testSound) {
+        if (mediaPlayer == null) {
             mediaPlayer = MediaPlayer.create(this, testSound);
             mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
             mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -75,10 +74,11 @@ public class MainTest extends Activity {
                 }
             });
         }
-        if(!mediaPlayer.isPlaying())
+        if (!mediaPlayer.isPlaying()){
+            //mediaPlayer.setAudioSessionId(testSound);
             mediaPlayer.start();
-        else {
-          stopSound();
+        }else {
+            stopSound();
         }
     }
 
@@ -87,8 +87,8 @@ public class MainTest extends Activity {
         if(mediaPlayer.isPlaying()) {
             mediaPlayer.reset();
             mediaPlayer.release();
-            mediaPlayer = null;
         }
+        mediaPlayer = null;
     }
 
     public void testLs(View view) {
@@ -100,15 +100,13 @@ public class MainTest extends Activity {
     }
 
     public void playSoundOnReceiver(View view) {
-        testSound = TEST_SOUND2;
         audioManager.setSpeakerphoneOn(false);
-        playSound(view);
+        playSound(TEST_RECV_SOUND);
     }
 
     public void playSoundOnSpeaker(View view) {
-        testSound = TEST_SOUND1;
         audioManager.setSpeakerphoneOn(true);
-        playSound(view);
+        playSound(TEST_SPK_SOUND);
     }
 
     public void accelerometerTest(View view) {

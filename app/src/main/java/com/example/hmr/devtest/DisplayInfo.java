@@ -22,6 +22,20 @@ public class DisplayInfo extends Activity{
         setContentView(R.layout.activity_info);
         TextView info = (TextView)findViewById(R.id.textView);
         phoneManager  = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
-        info.setText("S/N: " + Build.SERIAL + "\n" + "IMEI1: " + phoneManager.getDeviceId());
+        info.setText("S/N: " + Build.SERIAL + "\nIMEI1: " + phoneManager.getDeviceId()+"\nModelo: "+getDeviceName());
+    }
+    //TODO: find exact model
+    public String getDeviceName() {
+        String manufacturer = Build.MANUFACTURER;
+        String model = Build.MODEL;
+        if (model.startsWith(manufacturer)) {
+            return capitalize(model);
+        } else {
+            return capitalize(manufacturer) + " " + model;
+        }
+    }
+    private String capitalize(String s) {
+        if (s == null || s.length() == 0) return "";
+        return Character.toUpperCase(s.charAt(0)) + s.substring(1);
     }
 }

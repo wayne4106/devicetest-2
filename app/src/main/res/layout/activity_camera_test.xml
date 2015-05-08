@@ -17,5 +17,5 @@
         android:text="@string/takepicture"
         android:id="@+id/button"
         android:layout_alignParentBottom="true"
-         />
+        android:onClick="takePicture" />
 </RelativeLayout>
