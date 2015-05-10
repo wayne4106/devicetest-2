@@ -5,6 +5,7 @@
     <uses-sdk android:minSdkVersion="10" />
 
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -25,7 +26,6 @@
             android:theme="@style/AppTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -65,6 +65,12 @@
             android:label="@string/title_activity_camera_test"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name=".sound.LoopBack"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_loop_back"
+            android:theme="@style/AppTheme">
         </activity>
     </application>
 

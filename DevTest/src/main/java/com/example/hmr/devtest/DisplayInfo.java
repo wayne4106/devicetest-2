@@ -24,7 +24,7 @@ public class DisplayInfo extends Activity{
         phoneManager  = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
         info.setText("S/N: " + Build.SERIAL + "\nIMEI1: " + phoneManager.getDeviceId()+"\nModelo: "+getDeviceName());
     }
-    //TODO: find exact model
+
     public String getDeviceName() {
         String manufacturer = Build.MANUFACTURER;
         String model = Build.MODEL;

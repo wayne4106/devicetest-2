@@ -14,6 +14,7 @@ import com.example.hmr.devtest.camera.CameraTest;
 import com.example.hmr.devtest.keys.KeysTest;
 import com.example.hmr.devtest.sensor.OrientationTest;
 import com.example.hmr.devtest.sensor.ProximityTest;
+import com.example.hmr.devtest.sound.LoopBack;
 import com.example.hmr.devtest.touch.TouchTest;
 
 
@@ -33,7 +34,7 @@ public class MainTest extends Activity {
         setContentView(R.layout.activity_main_test);
         audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
         audioManager.setMode(AudioManager.STREAM_MUSIC);
-        //int origionalVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+        //int originalVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
         audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC), 0);
         vibra = (Vibrator)getSystemService(VIBRATOR_SERVICE);
         cameraManager = new CameraManager();
@@ -94,10 +95,10 @@ public class MainTest extends Activity {
     public void testLs(View view) {
         startActivity(new Intent(this, ProximityTest.class));
     }
-
     public void testKeys(View view) {
         startActivity(new Intent(this, KeysTest.class));
     }
+    public void loopBackTest(View view) { startActivity(new Intent(this, LoopBack.class));}
 
     public void playSoundOnReceiver(View view) {
         audioManager.setSpeakerphoneOn(false);
@@ -116,30 +117,21 @@ public class MainTest extends Activity {
     public void touchTest(View view) {
         startActivity(new Intent(this, TouchTest.class));
     }
-
     public void vibraTest(View view) {
         if(vibra.hasVibrator())
             vibra.vibrate(VIBRA_TIME);
     }
-
     public void showInfo(View view) {
        startActivity(new Intent(this, DisplayInfo.class));
     }
 
-
-    public void frontCameraTest(View view) {
-        cameraTest(CameraManager.FRONT_CAMERA);
-
-    }
-
+    public void frontCameraTest(View view) {cameraTest(CameraManager.FRONT_CAMERA);}
     public void backCameraTest(View view) {
         cameraTest(CameraManager.BACK_CAMERA);
     }
-
     public void flashLedTest(View view) {
          cameraManager.toggleFlashLed();
     }
-
     private void cameraTest(int cam){
         Intent intent = new Intent(this, CameraTest.class);
         Bundle b = new Bundle();
@@ -147,4 +139,6 @@ public class MainTest extends Activity {
         intent.putExtras(b);
         startActivity(intent);
     }
+
+
 }

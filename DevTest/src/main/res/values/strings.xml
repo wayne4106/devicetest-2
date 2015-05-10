@@ -22,11 +22,13 @@
     <string name="title_activity_sensor_test">Proximity Sensor Test</string>
     <string name="title_activity_display_info">Device Info</string>
     <string name="title_activity_camera_test">Camera Test</string>
+    <string name="title_activity_loop_back">LoopBack</string>
     <string name="test_keys_vol_up">Volume up</string>
     <string name="test_keys_vol_dn">Volume down</string>
     <string name="test_keys_back">Back</string>
     <string name="test_keys_menu">Menu</string>
     <string name="test_keys_pwr">Power button</string>
     <string name="takepicture">Take Picture</string>
+
 
 </resources>

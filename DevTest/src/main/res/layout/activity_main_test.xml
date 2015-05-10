@@ -43,7 +43,7 @@
         android:id="@+id/btn_loop_back"
         android:layout_row="0"
         android:layout_column="2"
-        />
+        android:onClick="loopBackTest"/>
 
 
     <Button
