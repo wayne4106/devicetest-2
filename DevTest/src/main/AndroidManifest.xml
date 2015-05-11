@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.hmr.devtest" >
+
+    <uses-sdk android:minSdkVersion="10" />
+
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/test"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".MainTest"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".sensor.ProximityTest"
+            android:label="@string/title_activity_sensor_test"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name=".DisplayInfo"
+            android:label="@string/title_activity_display_info"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name=".touch.TouchTest"
+            android:label="@string/title_activity_touch_test"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name=".sensor.OrientationTest"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_orientation_test"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name=".keys.KeysTest"
+            android:label="@string/title_activity_keys_test"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name=".camera.CameraTest"
+            android:label="@string/title_activity_camera_test"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name=".sound.LoopBack"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_loop_back"
+            android:theme="@style/AppTheme">
+        </activity>
+    </application>
+
+</manifest>
